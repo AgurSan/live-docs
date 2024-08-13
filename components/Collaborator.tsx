@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 const Collaborator = ({
@@ -13,8 +14,19 @@ const Collaborator = ({
   const shareDocumentHandler = async (type: string) => {};
   const rremoveCollaboratorHandler = async (email: string) => {};
 
-  //TODO: end the modal
-  return <div>Collaborator</div>;
+  return (
+    <li className="flex items-center justify-between gap-2 py-3">
+      <div className="flex gap-2">
+        <Image
+          src={collaborator.avatar}
+          alt={collaborator.name}
+          width={36}
+          height={36}
+          className="rounded-full size-9"
+        />
+      </div>
+    </li>
+  );
 };
 
 export default Collaborator;

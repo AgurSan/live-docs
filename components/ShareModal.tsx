@@ -14,6 +14,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import UserTypeSelector from "./UseTypeSelector";
 import Collaborator from "./Collaborator";
+import { useSelf } from "@liveblocks/react/suspense";
 
 const ShareModal = ({
   roomId,
@@ -21,6 +22,8 @@ const ShareModal = ({
   creatorId,
   currentUserType,
 }: ShareDocumentDialogProps) => {
+  const user = useSelf();
+
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
