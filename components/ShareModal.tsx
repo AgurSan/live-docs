@@ -15,6 +15,7 @@ import { Input } from "./ui/input";
 import UserTypeSelector from "./UseTypeSelector";
 import Collaborator from "./Collaborator";
 import { useSelf } from "@liveblocks/react/suspense";
+import { updateDocumentAccess } from "@/lib/actions/room.actions";
 
 const ShareModal = ({
   roomId,
@@ -33,8 +34,12 @@ const ShareModal = ({
   const shareDocumentHandler = async () => {
     setLoading(true);
 
-    try {
-    } catch (error) {}
+    await updateDocumentAccess({
+      roomId,
+      email,
+      userType: userType as UserType,
+      updatedBy: user.info,
+    });
 
     setLoading(false);
   };
