@@ -30,8 +30,7 @@ const UserButton = dynamic(
 const Home = async () => {
   try {
     const clerkUser = await currentUser();
-    if (!clerkUser)
-      return { redirect: { destination: "/sign-in", permanent: false } };
+    if (!clerkUser) return redirect("/sign-in");
 
     const roomDocuments = await getDocuments(
       clerkUser.emailAddresses[0].emailAddress
