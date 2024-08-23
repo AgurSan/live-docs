@@ -18,6 +18,7 @@ This project is built using the following technologies:
 - **Liveblocks**: Real-time collaboration features.
 - **Lexical Editor**: Rich text editor framework.
 - **ShadCN**: Utility-first CSS framework.
+
 - **Tailwind CSS**: Highly customizable, low-level CSS framework.
 
 ## Features
