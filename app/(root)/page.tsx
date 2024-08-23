@@ -1,15 +1,20 @@
-import AddDocumentBtn from "@/components/AddDocumentBtn";
-import { DeleteModal } from "@/components/DeleteModal";
-import Header from "@/components/Header";
-import Notifications from "@/components/Notifications";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { getDocuments } from "@/lib/actions/room.actions";
 import { dateConverter } from "@/lib/utils";
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { SignedIn } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+
+const AddDocumentBtn = dynamic(() => import("@/components/AddDocumentBtn"));
+const DeleteModal = dynamic(() => import("@/components/DeleteModal"));
+const Header = dynamic(() => import("@/components/Header"));
+const Notifications = dynamic(() => import("@/components/Notifications"));
+const UserButton = dynamic(() =>
+  import("@clerk/nextjs").then((mod) => mod.UserButton)
+);
 
 const Home = async () => {
   const clerkUser = await currentUser();
@@ -30,7 +35,7 @@ const Home = async () => {
         </div>
       </Header>
 
-      {roomDocuments.data.length > 0 ? (
+      {roomDocuments?.data?.length > 0 ? (
         <div className="document-list-container">
           <div className="document-list-title=">
             <h3 className="text-28-semibold">All documents</h3>
@@ -40,7 +45,7 @@ const Home = async () => {
             />
           </div>
           <ul className="document-ul">
-            {roomDocuments.data.map(({ id, metadata, createdAt }: any) => (
+            {roomDocuments?.data?.map(({ id, metadata, createdAt }: any) => (
               <li key={id} className="document-list-item">
                 <Link
                   href={`/documents/${id}`}
@@ -52,6 +57,7 @@ const Home = async () => {
                       alt="Document"
                       width={40}
                       height={40}
+                      loading="lazy"
                     />
                   </div>
                   <div className="space-y-1">
@@ -74,6 +80,8 @@ const Home = async () => {
             width={40}
             height={40}
             className="mx-auto"
+            loading="eager"
+            priority
           />
 
           <AddDocumentBtn
