@@ -3,7 +3,6 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import { create } from "domain";
 import { createDocument } from "@/lib/actions/room.actions";
 import { useRouter } from "next/navigation";
 
@@ -26,7 +25,13 @@ const AddDocumentBtn = ({ userId, email }: AddDocumentBtnProps) => {
       onClick={addDocumentHandler}
       className="gradient-blue flex gap-1 shadow-md"
     >
-      <Image src="/assets/icons/add.svg" alt="alt" width={24} height={24} />
+      <Image
+        src="/assets/icons/add.svg"
+        alt="alt"
+        width={24}
+        height={24}
+        priority
+      />
       <p className="hidden sm:block">Start a blank document</p>
     </Button>
   );

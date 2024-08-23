@@ -18,6 +18,7 @@ const ActiveCollaborators = () => {
             height={100}
             className="inline-block size-8 rounded-full ring-2 ring-dark-100"
             style={{ border: `3px solid ${color}` }}
+            priority
           />
         </li>
       ))}

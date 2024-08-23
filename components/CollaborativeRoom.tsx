@@ -110,6 +110,7 @@ const CollaborativeRoom = ({
                   height={24}
                   onClick={() => setEditing(true)}
                   className="pointer"
+                  priority
                 />
               )}
 

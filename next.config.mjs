@@ -1,4 +1,5 @@
 import { withSentryConfig } from "@sentry/nextjs";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -6,6 +7,14 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "img.clerk.com" }],
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
   },
 };
 

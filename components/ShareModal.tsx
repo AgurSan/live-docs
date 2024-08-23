@@ -56,6 +56,7 @@ const ShareModal = ({
             width={20}
             height={20}
             className="min-w-4 md:size-5"
+            priority
           />
           <p className="mr-1 hidden sm:block">Share</p>
         </Button>

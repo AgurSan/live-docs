@@ -42,6 +42,7 @@ const Collaborator = ({
           width={36}
           height={36}
           className="rounded-full size-9"
+          priority
         />
         <div>
           <p className="line-clamp-1 text-sm font-semibold leading-4 text-white">
