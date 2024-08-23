@@ -1,5 +1,5 @@
 import { Inter as FontSans } from "next/font/google";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import React from "react";
@@ -39,6 +39,7 @@ export default function RootLayout({
             fontSans.variable
           )}
         >
+          <SpeedInsights />
           <Provider>{children}</Provider>
         </body>
       </html>
