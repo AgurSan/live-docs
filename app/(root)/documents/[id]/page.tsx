@@ -1,11 +1,16 @@
 import { metadata } from "@/app/layout";
-import CollaborativeRoom from "@/components/CollaborativeRoom";
 import { getDocument } from "@/lib/actions/room.actions";
 import { getClerkUsers } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs/server";
+import dynamic from "next/dynamic";
 import { redirect } from "next/navigation";
 
 import React from "react";
+
+const CollaborativeRoom = dynamic(
+  () => import("@/components/CollaborativeRoom"),
+  { ssr: false }
+);
 
 const Document = async ({ params: { id } }: SearchParamProps) => {
   const clerkUser = await currentUser();
