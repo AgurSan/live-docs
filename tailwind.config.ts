@@ -54,8 +54,8 @@ const config = {
         },
       },
       backgroundImage: {
-        doc: "url(/assets/images/doc.png)",
-        modal: "url(/assets/images/modal.png)",
+        doc: "url(/assets/images/doc.webp)",
+        modal: "url(/assets/images/modal.webp)",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

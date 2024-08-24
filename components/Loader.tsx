@@ -10,7 +10,6 @@ const Loader = () => {
         width={32}
         height={32}
         className="animate-spin"
-        priority
       />
       Loading...
     </div>

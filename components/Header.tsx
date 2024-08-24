@@ -13,6 +13,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           width={120}
           height={32}
           className="hidden md:block"
+          loading="eager"
           priority
         />
         <Image
@@ -21,6 +22,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           width={32}
           height={32}
           className="mr-2 md:hidden"
+          loading="eager"
           priority
         />
       </Link>
