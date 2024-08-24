@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { Button } from "@/components/ui/button";
 import { getDocuments } from "@/lib/actions/room.actions";
 import { dateConverter } from "@/lib/utils";
 import { SignedIn } from "@clerk/nextjs";
@@ -7,14 +6,12 @@ import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import Header from "@/components/Header";
 
 const AddDocumentBtn = dynamic(() => import("@/components/AddDocumentBtn"), {
   ssr: false,
 });
 const DeleteModal = dynamic(() => import("@/components/DeleteModal"), {
-  ssr: false,
-});
-const Header = dynamic(() => import("@/components/Header"), {
   ssr: false,
 });
 const Notifications = dynamic(() => import("@/components/Notifications"), {
