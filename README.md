@@ -9,6 +9,8 @@
 
 Welcome to the **live-docs** project. Coded along this [video](https://youtu.be/y5vE8y_f_OM?si=5Cm9rrSCuB_u2sC_) to learn more about Nextjs. This tool allows multiple users to collaborate in real-time on documents, with robust features like authentication, document management, commenting, notifications, and more. The application is built using modern web technologies, ensuring a responsive and smooth user experience across all devices.
 
+[livedemo](http://live-docs-demo.vercel.app)
+
 ## Tech Stack
 
 This project is built using the following technologies:
