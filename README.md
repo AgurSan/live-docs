@@ -53,9 +53,10 @@ Ensure you have the following installed:
 
 ### Cloning the Repository
 
-````bash
+```bash
 git clone https://github.com/AgurSan/live-docs.git
 cd live-docs
+```
 
 **Installation**
 
@@ -63,7 +64,7 @@ Install the project dependencies using npm:
 
 ```bash
 npm install
-````
+```
 
 **Set Up Environment Variables**
 
